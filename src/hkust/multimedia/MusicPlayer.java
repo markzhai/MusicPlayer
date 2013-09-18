@@ -30,7 +30,7 @@ import javax.swing.JFrame;
 public class MusicPlayer extends PApplet {
 	public static void main(String args[]) {
 		// PApplet.main(new String[] { "--present", "SimpleProcessingExample"});
-		String[] appletArgs = new String[] { "MusicPlayer" };
+		String[] appletArgs = new String[] {"MusicPlayer"};
 		if (args != null) {
 			PApplet.main(concat(appletArgs, args));
 		} else {

@@ -1,4 +1,4 @@
-package hkust.multimedia;
+package test;
 
 import processing.core.*;
 

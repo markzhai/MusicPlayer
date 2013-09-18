@@ -1,4 +1,5 @@
-package hkust.multimedia;
+package test;
+
 
 public class DisplayFrame extends javax.swing.JFrame {
 	
