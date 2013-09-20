@@ -3,9 +3,10 @@ package test;
 import processing.core.*;
 
 public class MyProcessingSketch extends PApplet {
-	/**
-	 * 
-	 */
+	public static void main(String args[]) {
+		PApplet.main(new String[] { "--present", "MyProcessingSketch" });
+	}
+	  
 	public void setup() {
 		size(200, 200);
 		background(0);
@@ -16,9 +17,5 @@ public class MyProcessingSketch extends PApplet {
 		if (mousePressed) {
 			line(mouseX, mouseY, pmouseX, pmouseY);
 		}
-	}
-
-	public static void main(String args[]) {
-		PApplet.main(new String[] { "--present", "MyProcessingSketch" });
 	}
 }
