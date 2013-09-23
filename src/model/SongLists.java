@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SongLists extends AbstractModelObject {
-	private final List<SongList> lists = new ArrayList();
+	private final List<SongList> lists = new ArrayList<SongList>();
 	
 	public void addList(SongList list) {
 		lists.add(list);
