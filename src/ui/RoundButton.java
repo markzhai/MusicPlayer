@@ -1,8 +1,9 @@
 package ui;
 
+import application.MusicPlayer;
 import processing.core.PImage;
 
-public class RoundButton extends Button {
+public class RoundButton extends MyButton {
 	public RoundButton(MusicPlayer parent, PImage image, PImage imageHot, PImage imagePressed, PImage imagePressedHot) {
 		super(parent, image, imageHot, imagePressed, imagePressedHot);
 	}
@@ -20,7 +21,6 @@ public class RoundButton extends Button {
 			double upperbound = Math.sqrt(radius * radius - temp * temp) + radius + this.getLocation().y;
 			double lowerbound = - Math.sqrt(radius * radius - temp * temp) + radius + this.getLocation().y;
 			if (mouseY < upperbound && mouseY > lowerbound) {
-				//System.out.println(upperbound + " - " + lowerbound + " - " + mouseY);
 				return true;
 			}
 		}
@@ -28,12 +28,14 @@ public class RoundButton extends Button {
 	}
 	
 	public void action() {
-		if (getParent().isMusicPlaying()) {
+		if (getCondition() == 0 && getParent().player != null) {
 			setCondition(1);
-			getParent().setMusicPlaying(false);
-		} else {
+			getParent().player.play();
+			getParent().setMusicPause(false);
+		} else if (getCondition() == 1 && getParent().player != null) {
 			setCondition(0);
-			getParent().setMusicPlaying(true);
+			getParent().player.pause();
+			getParent().setMusicPause(true);
 		}
 	}
 }
